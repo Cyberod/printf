@@ -1,18 +1,16 @@
-include "main.h"
+#include "main.h"
 
 /**
- * print_char -> prints character
+ * print_char - prints character
  * @ap: argument pointer
  * @params: the parameters struct
  *
- * Return: number of chars printed
+ * Return: number chars printed
  */
-
 int print_char(va_list ap, params_t *params)
 {
 	char pad_char = ' ';
-	unsigned int pad = 1, sum = 0;
-	unsigned int ch = va_arg(ap, int);
+	unsigned int pad = 1, sum = 0, ch = va_arg(ap, int);
 
 	if (params->minus_flag)
 		sum += _putchar(ch);
@@ -24,13 +22,12 @@ int print_char(va_list ap, params_t *params)
 }
 
 /**
- * print_int-> prints integer
+ * print_int - prints integer
  * @ap: argument pointer
  * @params: the parameters struct
  *
- * Return: number of chars printed
+ * Return: number chars printed
  */
-
 int print_int(va_list ap, params_t *params)
 {
 	long l;
@@ -47,7 +44,7 @@ int print_int(va_list ap, params_t *params)
 /**
  * print_string - prints string
  * @ap: argument pointer
- * @params: the parameter struct
+ * @params: the parameters struct
  *
  * Return: number chars printed
  */
@@ -57,12 +54,11 @@ int print_string(va_list ap, params_t *params)
 	unsigned int pad = 0, sum = 0, i = 0, j;
 
 	(void)params;
-
 	switch ((int)(!str))
 		case 1:
 			str = NULL_STRING;
-	j = pad = _strlen(str);
 
+	j = pad = _strlen(str);
 	if (params->precision < pad)
 		j = pad = params->precision;
 
@@ -88,9 +84,9 @@ int print_string(va_list ap, params_t *params)
 }
 
 /**
- * print_percent -> prints string
+ * print_percent - prints string
  * @ap: argument pointer
- * @params: the parameter struct
+ * @params: the parameters struct
  *
  * Return: number chars printed
  */
@@ -102,9 +98,9 @@ int print_percent(va_list ap, params_t *params)
 }
 
 /**
- * print_S -> custom format specifier
+ * print_S - custom format specifier
  * @ap: argument pointer
- * @params: The parameter struct
+ * @params: the parameters struct
  *
  * Return: number chars printed
  */
