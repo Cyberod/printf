@@ -90,6 +90,7 @@ int print_octal(va_list ap, params_t *params)
 	unsigned long l;
 	char *str;
 	int c = 0;
+
 	if (params->l_modifier)
 		l = (unsigned long)va_arg(ap, unsigned long);
 	else if (params->h_modifier)
